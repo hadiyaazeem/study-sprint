@@ -91,6 +91,26 @@ Built and tested at 375px (mobile), 768px (tablet), and 1440px (desktop):
 - The progress bar is hidden below `sm` (matching the mock) since the timer digits and duration chips already communicate status at narrow widths.
 - Flap-tile size and timer typography use `clamp()` so digits scale fluidly between breakpoints instead of jumping.
 - Buttons and chips wrap (`flex-wrap`) rather than overflowing on narrow viewports.
+- ## 📷 Preview
+
+### Home
+<img width="815" height="394" alt="image" src="https://github.com/user-attachments/assets/6502301b-4669-4209-a7dc-d17867afa9b5" />
+
+
+
+### Dark Mode
+
+<img width="803" height="384" alt="image" src="https://github.com/user-attachments/assets/caa47b9d-3507-4f92-a8bf-30309c3ac612" />
+
+
+### Statistics
+
+<img width="355" height="298" alt="image" src="https://github.com/user-attachments/assets/769365f4-8694-4ef3-b8b1-a5034df3e180" />
+
+
+### Session History
+
+<img width="785" height="211" alt="image" src="https://github.com/user-attachments/assets/20c1301c-4015-4f63-b359-3501ff131b9d" />
 
 ## Deployment
 
