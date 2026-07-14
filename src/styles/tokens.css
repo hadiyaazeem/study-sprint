@@ -1,0 +1,72 @@
+/**
+ * Design tokens — the single source of truth for color in this app.
+ * No component ever hardcodes a hex value; everything reads from these
+ * CSS custom properties, which flip when [data-theme] changes.
+ *
+ * Palette: "Study Hall" — cool paper-grey surfaces, an indigo primary
+ * (focus / active states) and a brass-gold secondary (streaks, completion),
+ * echoing library shelving and a brass reading lamp rather than the more
+ * common warm-cream + terracotta combination. All foreground/background
+ * pairs below are verified at >=4.5:1 contrast in both themes.
+ */
+
+:root[data-theme="light"] {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --surface-2: #e7e9ed;
+  --ink: #1a1d29;
+  --ink-soft: #5b6072;
+  --line: #dcdfe6;
+  --primary: #3e5c9a;
+  --primary-soft: #dde4f5;
+  --on-primary: #ffffff;
+  --secondary: #7a5219;
+  --secondary-soft: #f0e2c8;
+  --danger: #a03a31;
+  --danger-soft: #f4dedb;
+  --board: #14171f;
+  --board-digit: #f0c674;
+  --shadow: 0 1px 2px rgba(26, 29, 41, 0.06), 0 8px 24px rgba(26, 29, 41, 0.06);
+  --focus-ring: var(--primary);
+}
+
+:root[data-theme="dark"] {
+  --bg: #12141c;
+  --surface: #1b1e2a;
+  --surface-2: #242838;
+  --ink: #edeff5;
+  --ink-soft: #9ba0b4;
+  --line: #2e3346;
+  --primary: #9aacde;
+  --primary-soft: #26314f;
+  --on-primary: #0a0c12;
+  --secondary: #e0b368;
+  --secondary-soft: #3a2e17;
+  --danger: #e37065;
+  --danger-soft: #3a1e1b;
+  --board: #0a0c12;
+  --board-digit: #f0c674;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+  --focus-ring: var(--primary);
+}
+
+/* Smooth theme transition on the properties that actually change */
+:root {
+  color-scheme: light dark;
+}
+
+body,
+[data-theme] * {
+  transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
